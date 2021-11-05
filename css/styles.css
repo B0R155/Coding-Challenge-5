@@ -1,0 +1,170 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 20px 30px 20px 30px;
+  font-family: Spartan, sans-serif;
+  font-size: 12;
+}
+h1 {
+  text-align: center;
+  color: hsl(300, 43%, 22%);
+  padding-bottom: 30px;
+}
+.header p {
+  text-align: center;
+  color: hsl(303, 10%, 53%);
+  padding-bottom: 30px;
+}
+.stars {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+.stars .review {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: hsl(300, 24%, 96%);
+  margin-bottom: 20px;
+}
+.stars .review .stars-txt {
+  padding-bottom: 15px;
+  color: hsl(300, 43%, 22%);
+}
+.stars .review .stars1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+.stars .review .stars2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+.stars .review .stars3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+.stars .review .stars1 img,
+.stars2 img,
+.stars3 img {
+  margin-right: 10px;
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+.cards .card {
+  background-color: hsl(300, 43%, 22%);
+  padding: 30px 30px 30px 30px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+.cards .card .card-head {
+  display: grid;
+  grid-template-areas:
+    "img heading"
+    "img subheading";
+  margin-bottom: 15px;
+}
+.cards .card .card-head img {
+  grid-area: img;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: -50px;
+}
+.cards .card .card-head h4 {
+  grid-area: heading;
+  color: hsl(0, 0%, 100%);
+}
+.cards .card .card-head h5 {
+  grid-area: subheading;
+  color: hsl(333, 80%, 67%);
+}
+.cards .card p {
+  color: hsl(0, 0%, 100%);
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header stars"
+      "cards cards";
+    grid-gap: 2em;
+  }
+  .header {
+    grid-area: header;
+    margin-top: 20px;
+  }
+  .header h1,
+  p {
+    display: inline-block;
+    text-align: left;
+    margin-left: 0px;
+  }
+  .header p {
+    text-align: left;
+  }
+  .stars {
+    grid-area: stars;
+    margin-top: 20px;
+    padding-left: 120px;
+  }
+
+  .stars .review .review1,
+  .review2,
+  .review3 {
+    display: flex;
+    flex-direction: row;
+  }
+  .stars .review:nth-child(1) {
+    max-width: 500px;
+  }
+  .stars .review:nth-child(2) {
+    transform: translateX(4.5rem);
+    max-width: 500px;
+  }
+  .stars .review:nth-child(3) {
+    transform: translateX(7rem);
+    max-width: 500px;
+  }
+  .stars .review .stars-txt {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .cards {
+    grid-area: cards;
+    display: flex;
+    flex-direction: row;
+  }
+  .cards .card {
+    margin-right: 20px;
+  }
+  .cards .card:nth-child(1) {
+    transform: translateY(-1rem);
+  }
+  .cards .card:nth-child(3) {
+    transform: translateY(1rem);
+  }
+  .cards .card .card-head h4,
+  h5 {
+    margin-left: -130px;
+  }
+}
